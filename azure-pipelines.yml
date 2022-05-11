@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 variables:
   buildConfiguration: 'Release'
@@ -15,3 +15,7 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+  
+- script: sqlpackage.exe /version
+  workingDirectory: C:\Program Files\Microsoft SQL Server\160\DAC\bin\
+  displayName: 'get sqlpackage version'
