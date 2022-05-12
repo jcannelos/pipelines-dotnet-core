@@ -25,3 +25,13 @@ steps:
 
 - script: az login --service-principal -u $(sp-devops-principal-id) -p $(sp-devops-secret-value) --tenant 41b08d65-56af-477e-aa6b-9dc5cfc30723
   displayName: 'az login test'
+
+- script: az login --service-principal -u $(sp-devops-principal-id) -p $(sp-devops-secret-value) --tenant 41b08d65-56af-477e-aa6b-9dc5cfc30723
+  displayName: 'az login test'
+  
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'workflow-metric-tracker-devops'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az storage container list --account-name adlsazurepipelines'
