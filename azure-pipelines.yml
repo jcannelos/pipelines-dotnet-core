@@ -23,6 +23,5 @@ steps:
 - script: az version
   displayName: 'get azure cli version'
 
-- script: az login --service-principal -u fb52a0ec-0c73-49e1-9067-fd499951fbb2 -p VtE8Q~C.T~SiioQ1oYNAB5XTFIl1U9fm-orJNaj- --tenant 
-41b08d65-56af-477e-aa6b-9dc5cfc30723
+- script: az login --service-principal -u $(sp-devops-principal-id) -p $(sp-devops-secret-value) --tenant 41b08d65-56af-477e-aa6b-9dc5cfc30723
   displayName: 'az login test'
