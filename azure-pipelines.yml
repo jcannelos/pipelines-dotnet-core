@@ -19,3 +19,6 @@ steps:
 - script: sqlpackage.exe /version
   workingDirectory: C:\Program Files\Microsoft SQL Server\160\DAC\bin\
   displayName: 'get sqlpackage version'
+
+- script: az version
+  displayName: 'get azure cli version'
