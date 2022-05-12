@@ -31,4 +31,4 @@ steps:
     azureSubscription: 'workflow-metric-tracker-devops'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az storage container list --account-name adlsazurepipelines --account-key xwpfExm7i/aBKrJua4MaXh22QI/zZLvaKLPp8Zsr1LEJXCC79OmzTYl2w59P/GJqPpE4hB6XA9r3aae5dOxRXg=='
+    inlineScript: 'az storage container list --account-name adlsazurepipelines --account-key $(devops-storage-acct-key)'
